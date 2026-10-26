@@ -1,0 +1,19 @@
+<div class="menu-grid">
+    @for (item of items(); track item.id) {
+        <article class="menu-item">
+            <h3>{{item.name}}</h3>
+
+            <p>{{item.description}}</p>
+
+            <span>{{item.price}} MAD</span>
+
+            <span> {{item.category}}</span>
+
+            @if( !item.available ) {
+                <span> Unavailable</span>
+            }
+        </article>
+    } @empty {
+        <p>No dishes available.</p>
+    }
+</div>
