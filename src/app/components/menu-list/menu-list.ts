@@ -1,8 +1,9 @@
 import { Component, input } from '@angular/core';
 import { MenuItem } from '../../models/menu-item';
+import { MenuCard } from '../menu-card/menu-card';
 
 @Component({
-  imports: [],
+  imports: [MenuCard],
   selector: 'app-menu-list',
   styleUrl: './menu-list.css',
   templateUrl: './menu-list.html',

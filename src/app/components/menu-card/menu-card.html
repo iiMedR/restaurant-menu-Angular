@@ -1,0 +1,23 @@
+<article class="menu-card">
+
+  <span class="category">
+    {{ item().category }}
+  </span>
+
+  <h3>{{ item().name }}</h3>
+
+  <p class="description">
+    {{ item().description }}
+  </p>
+
+  <div class="card-footer">
+    <strong>{{ item().price }} MAD</strong>
+
+    @if (!item().available) {
+      <span class="unavailable">Unavailable</span>
+    } @else if (item().price > 60) {
+      <span class="premium">Premium Dish</span>
+    }
+  </div>
+
+</article>

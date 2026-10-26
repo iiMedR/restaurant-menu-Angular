@@ -1,0 +1,45 @@
+.menu-card {
+  background: white;
+  border: 1px solid #e1e5df;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.category {
+  font-size: 12px;
+  color: #61806a;
+}
+
+.menu-card h3 {
+  color: #20392c;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #64756b;
+  line-height: 1.6;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.card-footer strong {
+  color: #214c3a;
+}
+
+.unavailable {
+  color: #b91c1c;
+  font-size: 12px;
+}
+
+.premium {
+  color: #b7791f;
+  font-size: 12px;
+}
