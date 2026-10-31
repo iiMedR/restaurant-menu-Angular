@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { MenuItem } from './models/menu-item';
 import { MenuList } from './components/menu-list/menu-list';
+import { MenuFilters } from './components/menu-filters/menu-filters';
 
 @Component({
-  imports: [MenuList],
+  imports: [MenuList, MenuFilters],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -53,4 +54,30 @@ export class App {
       available: true,
     }
   ]
+
+  categories: string[] = [
+    'All',
+    'Main Dishes',
+    'Starters',
+    'Desserts',
+    'Drinks'
+  ]
+
+  selectedCategory = signal<string>('All')
+
+  selectCategory(category: string): void {
+    this.selectedCategory.set(category);
+  }
+
+  filteredItems = computed(() => {
+    const selected = this.selectedCategory();
+
+    if(selected === 'All'){
+      return this.menuItams;
+    }
+
+    return this.menuItams.filter(
+      item => item.category === selected
+    )
+  })
 }

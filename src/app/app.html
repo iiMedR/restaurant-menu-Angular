@@ -6,5 +6,10 @@
 <main>
   <h2>Our Menu</h2>
 
-  <app-menu-list [items]="menuItams"></app-menu-list>
+  <app-menu-filters
+    [categories]="categories"
+    [selectedCategory]="selectedCategory()"
+    (categorySelected)="selectCategory($event)"></app-menu-filters>
+
+  <app-menu-list [items]="filteredItems()"></app-menu-list>
 </main>

@@ -1,0 +1,19 @@
+<div class="category-filters">
+    @for (category of categories(); track category){
+        <button
+            type="button"
+            [class.active]="selectedCategory() === category"
+            [attr.aria-pressed]="selectedCategory() === category"
+            (click)="select(category)"
+        >
+            {{category}}
+        </button>
+    }
+    <button
+        type="button"
+        (click)="reset(All)"
+    >
+        Reset
+    </button>
+
+</div>
