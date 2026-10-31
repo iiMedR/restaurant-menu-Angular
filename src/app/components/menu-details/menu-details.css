@@ -1,0 +1,37 @@
+.menu-details {
+  margin-top: 30px;
+  padding: 25px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.details-header h2 {
+  color: #214c3a;
+}
+
+.details-header button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #214c3a;
+  color: white;
+  cursor: pointer;
+}
+
+.available {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.unavailable {
+  color: #b91c1c;
+  font-weight: bold;
+}

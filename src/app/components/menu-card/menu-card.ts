@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MenuItem } from '../../models/menu-item';
 
 @Component({
@@ -9,4 +9,10 @@ import { MenuItem } from '../../models/menu-item';
 })
 export class MenuCard {
   item = input.required<MenuItem>();
+
+  itemSelected = output<MenuItem>();
+
+  select(): void{
+    this.itemSelected.emit(this.item());
+  }
 }

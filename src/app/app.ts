@@ -2,9 +2,10 @@ import { Component, signal, computed } from '@angular/core';
 import { MenuItem } from './models/menu-item';
 import { MenuList } from './components/menu-list/menu-list';
 import { MenuFilters } from './components/menu-filters/menu-filters';
+import { MenuDetails } from './components/menu-details/menu-details';
 
 @Component({
-  imports: [MenuList, MenuFilters],
+  imports: [MenuList, MenuFilters, MenuDetails],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -105,4 +106,13 @@ export class App {
       return matchesCategory && matchesSearch
     })
   })
+
+  selectedItem = signal<MenuItem | null>(null);
+  selectItem(item: MenuItem): void{
+    this.selectedItem.set(item)
+  }
+
+  closeDetails(): void{
+    this.selectedItem.set(null)
+  }
 }

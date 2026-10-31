@@ -43,3 +43,19 @@
   color: #b7791f;
   font-size: 12px;
 }
+
+.details-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #214c3a;
+  color: white;
+  cursor: pointer;
+}
+
+.details-button:hover {
+  background: #163729;
+}

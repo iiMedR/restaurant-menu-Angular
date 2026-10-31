@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MenuItem } from '../../models/menu-item';
 import { MenuCard } from '../menu-card/menu-card';
 
@@ -10,4 +10,10 @@ import { MenuCard } from '../menu-card/menu-card';
 })
 export class MenuList {
   items = input.required<MenuItem[]>();
+
+  itemSelected = output<MenuItem>();
+
+  onItemSelected(item: MenuItem): void{
+    this.itemSelected.emit(item)
+  }
 }
