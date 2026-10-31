@@ -12,11 +12,19 @@ export class MenuFilters {
 
   categorySelected = output<string>();
 
+  searchText = input.required<string>();
+  searchChanged = output<string>();
+
   select(category: string): void {
     this.categorySelected.emit(category)
   }
 
-  reset(category: string): void {
+  reset(): void {
     this.categorySelected.emit('All')
+    this.searchChanged.emit('')
+  }
+
+  onSearch(text: string): void{
+    this.searchChanged.emit(text)
   }
 }

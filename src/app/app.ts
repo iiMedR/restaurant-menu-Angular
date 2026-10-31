@@ -69,7 +69,7 @@ export class App {
     this.selectedCategory.set(category);
   }
 
-  filteredItems = computed(() => {
+  /*filteredItems = computed(() => {
     const selected = this.selectedCategory();
 
     if(selected === 'All'){
@@ -79,5 +79,30 @@ export class App {
     return this.menuItams.filter(
       item => item.category === selected
     )
+  })*/
+
+  searchText = signal<string>('');
+
+  updateSearch(text: string): void{
+    this.searchText.set(text)
+  }
+
+  filteredItems = computed(() => {
+    const category = this.selectedCategory();
+    const searchTitle = this.searchText().trim().toLowerCase();
+    const searchDescription = this.searchText().trim().toLowerCase();
+
+      if(category === 'All' && searchTitle === '' && searchDescription === ''){
+        return this.menuItams;
+      }
+
+    return this.menuItams.filter(item => {
+
+      const matchesCategory = category === 'All' || item.category === category;
+
+      const matchesSearch = item.name.toLowerCase().includes(searchTitle) || item.description.toLowerCase().includes(searchDescription)
+
+      return matchesCategory && matchesSearch
+    })
   })
 }

@@ -1,4 +1,18 @@
+<div class="search-container">
+        <input
+            #searchBox
+            type="search"
+            placeholder="Search for a dish..."
+            [value]="searchText()"
+            (input)="onSearch(searchBox.value)"
+        >
+        @if(searchText() !== ''){
+            <h5>Searching for: <bold>{{searchText()}}.</bold></h5>
+        }
+</div>
+
 <div class="category-filters">
+
     @for (category of categories(); track category){
         <button
             type="button"
@@ -11,7 +25,7 @@
     }
     <button
         type="button"
-        (click)="reset(All)"
+        (click)="reset()"
     >
         Reset
     </button>

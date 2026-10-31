@@ -9,7 +9,9 @@
   <app-menu-filters
     [categories]="categories"
     [selectedCategory]="selectedCategory()"
-    (categorySelected)="selectCategory($event)"></app-menu-filters>
+    (categorySelected)="selectCategory($event)"
+    [searchText]="searchText()"
+    (searchChanged)="updateSearch($event)"></app-menu-filters>
 
   <app-menu-list [items]="filteredItems()"></app-menu-list>
 </main>
