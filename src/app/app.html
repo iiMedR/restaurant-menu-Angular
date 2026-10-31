@@ -12,11 +12,11 @@
     (categorySelected)="selectCategory($event)"
     [searchText]="searchText()"
     (searchChanged)="updateSearch($event)"></app-menu-filters>
-    
+
   <app-menu-list 
     [items]="filteredItems()"
     (itemSelected)="selectItem($event)"
-    
+    [selectedId]="selectedItem()?.id ?? null"
   ></app-menu-list>
 
   @if (selectedItem(); as item) {

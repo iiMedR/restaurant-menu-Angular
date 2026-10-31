@@ -12,6 +12,8 @@ export class MenuCard {
 
   itemSelected = output<MenuItem>();
 
+  selectedId = input<number | null>(null);
+
   select(): void{
     this.itemSelected.emit(this.item());
   }

@@ -68,6 +68,7 @@ export class App {
 
   selectCategory(category: string): void {
     this.selectedCategory.set(category);
+    this.selectedItem.set(null);
   }
 
   /*filteredItems = computed(() => {
@@ -86,6 +87,7 @@ export class App {
 
   updateSearch(text: string): void{
     this.searchText.set(text)
+    this.selectedItem.set(null);
   }
 
   filteredItems = computed(() => {

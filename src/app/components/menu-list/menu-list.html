@@ -2,7 +2,8 @@
     @for (item of items(); track item.id) {
         <app-menu-card 
             [item]="item"
-            (itemSelected)="onItemSelected($event)"        
+            (itemSelected)="onItemSelected($event)" 
+            [selectedId]="selectedId()"       
         ></app-menu-card>
     } @empty {
         <p>No dishes available.</p>

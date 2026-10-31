@@ -1,4 +1,4 @@
-<article class="menu-card">
+<article class="menu-card" [class.selected]="item().id === selectedId()">
 
   <span class="category">
     {{ item().category }}
@@ -23,6 +23,7 @@
     type="button"
     class="details-button"
     (click)="select()"
+    [disabled]="!item().available"
   >
     View Details
   </button>

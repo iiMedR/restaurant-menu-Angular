@@ -13,6 +13,8 @@ export class MenuList {
 
   itemSelected = output<MenuItem>();
 
+  selectedId = input<number | null>(null);
+
   onItemSelected(item: MenuItem): void{
     this.itemSelected.emit(item)
   }

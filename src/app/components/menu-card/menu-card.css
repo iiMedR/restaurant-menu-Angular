@@ -59,3 +59,13 @@
 .details-button:hover {
   background: #163729;
 }
+
+.menu-card.selected {
+  border: 2px solid #214c3a;
+  background: #eef7f0;
+}
+
+.details-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
